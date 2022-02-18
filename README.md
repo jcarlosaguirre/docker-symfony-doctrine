@@ -13,14 +13,17 @@ scripts de python desde la consola._
 
 _- Disponer de un contenedor Docker con MySQL accesible o un servidor de base de datos._ <br/>
 
-_Crear una copia de la carpeta **sf-app-provisioning** de nuestro proyecto **Symfony** anterior y 
-renombrarla a **apinba**. Podemos mover la carpeta a otro directorio para trabajar más cómodamente._
+_Clonar este repositorio en un directorio donde podamos trabajar cómodamente indicando **apinba**
+como carpeta donde se va a incluir el contenido. Eliminamos el contenido relacionado con **git**, 
+ya que este repositorio tan solo sirve como punto de partida y no queremos alterarlo._
 
 ```
 // Por consola
-cp -R sf-app-provisioning apinba
-mv apinba ../apinba
-cd ../apinba
+git clone https://github.com/jcarlosaguirre/docker-symfony-doctrine.git apinba
+
+cd apinba
+rm -r .git
+rm .gitignore
 ```
 <br/>
 
@@ -43,7 +46,7 @@ container_name: apinba
 <br/>
 
 
-_Podemos incluir un dominio personalizado en nuestro archivo **hosts** para acceder a la aplicación de **Symfony**
+_(Opcional) Podemos incluir un dominio personalizado en nuestro archivo **hosts** para acceder a la aplicación de **Symfony**
 de manera más intuitiva._
 
 
@@ -76,8 +79,11 @@ mv apinba/.env .
 ```
 <br/>
 
-_Abrimos el navegador y accedemos a la url de nuestro proyecto. Si no es accesible debemos cambiar los 
-permisos del directorio **var/log** de nuestro proyecto._
+_Abrimos el navegador y accedemos a la url de nuestro proyecto._  
+
+>**localhost:8082** o **apinba.local:8082**
+
+_Si no es accesible debemos cambiar los permisos del directorio **var/log** de nuestro proyecto._
 
 ```
 chmod 777 -R var/log
