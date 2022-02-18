@@ -54,7 +54,6 @@ de manera más intuitiva._
 
 
 ## Instalación 🚀
-___
 
 _Una vez realizados los pre-requisitos, construimos el contenedor y 
 accedemos a él para crear nuestro proyecto._
@@ -153,6 +152,7 @@ incluye junto al tipado cuando hace referencia a otros objetos)._
 <div style="display: flex; justify-content: center">
  <img style="border: 1px solid #888; width: 100vw; max-width: 600px" src="./readmeImages/entity_jugadores.png" alt="Alt text" title="Optional title">
 </div>
+<br/>
 
 _El siguiente paso es crear, en sus respectivas carpetas, las clases php que servirán de **repositorios** y **controladores** de cada entidad,
 desde los cuales operaremos con la base de datos. Los controladores serán referenciados en las distintas rutas de nuestra api en el 
@@ -160,9 +160,9 @@ archivo **routes.yaml**:_
 <div style="display: flex; justify-content: center">
 <img style="border: 1px solid #888; width: 100vw; max-width: 600px" src="./readmeImages/routes_file.png" alt="Alt text" title="Optional title">
 </div>
+<br/>
 
 ## Ejecutando las consultas ⚙️
-___
 
 _Con las **Entidades** y **Controladores** definidos y asociados a las distintas rutas en el archivo **routes.yaml**
 ya se pueden consultar los datos desde nuestra aplicación Symfony_
@@ -171,31 +171,35 @@ ya se pueden consultar los datos desde nuestra aplicación Symfony_
 <div style="display: flex; justify-content: center">
  <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_a.png" alt="Alt text" title="Optional title">
 </div>
+<br/>
 
 * <a href="apinba.local:8082/jugador/fisico/{nombre}">apinba.local:8082/jugador/fisico/{nombre}</a>
 <div style="display: flex; justify-content: center">
  <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_g.png" alt="Alt text" title="Optional title">
 </div>
+<br/>
 
 * <a href="apinba.local:8082/estadisticas/jugador/{nombre}">apinba.local:8082/estadisticas/jugador/{nombre}</a>
 <div style="display: flex; justify-content: center">
  <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_h.png" alt="Alt text" title="Optional title">
 </div>
+<br/>
 
 * <a href="apinba.local:8082/partidos/resultados/visitante/{nombre}">apinba.local:8082/partidos/resultados/visitante/{nombre}</a>
 <div style="display: flex; justify-content: center">
  <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_k.png" alt="Alt text" title="Optional title">
 </div>
+<br/>
 
 * <a href="apinba.local:8082/partidos/resultados/media/visitante/{nombre}">apinba.local:8082/partidos/resultados/media/visitante/{nombre}</a>
 <div style="display: flex; justify-content: center">
  <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_m.png" alt="Alt text" title="Optional title">
 </div>
+<br/>
 
 <br/>
 
 ## Construido con 🛠️
-___
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
@@ -204,14 +208,12 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [Doctrine](https://www.doctrine-project.org/) - ORM
 
 ## Autores ✒️
-___
 
 * **Antonio Calabuig** - *Trabajo Inicial* - [buig](https://github.com/buig)
 * **Juan Carlos Aguirre** - *Documentación* - [jcarlosaguirre](https://github.com/jcarlosaguirre)
 
 
 ## Licencia 📄
-___
 
 Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
