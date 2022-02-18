@@ -9,17 +9,17 @@
 * [Autores](#authors)  
 * [Licencia](#license)
 
-### Descripción 🔎️
-
+## Descripción 🔎️
 
 _Proyecto de práctica para el desarrollo de una aplicación web con Symfony y Doctrine.  
 Crea un proyecto desde cero con una base de datos de prueba de la NBA, importando un 
 archivo sql a un servidor de base de datos y cargando la información a sus tablas con 
 scripts de python desde la consola._
 
-<a id="requeriments"/>
+<br/>
 
-### Pre-requisitos 📋
+## Pre-requisitos 📋
+<a id="requeriments"/>
 
 
 _- Disponer de un contenedor Docker con MySQL accesible o un servidor de base de datos._ <br/>
@@ -66,9 +66,9 @@ de manera más intuitiva._
 127.0.0.1	apinba.local
 ```
 
-<a id="install"/>
 
 ## Instalación 🚀
+<a id="install"/>
 
 _Una vez realizados los pre-requisitos, construimos el contenedor y 
 accedemos a él para crear nuestro proyecto._
@@ -180,9 +180,8 @@ archivo **routes.yaml**:_
 </p>
 <br/>
 
-<a id="queries"/>
-
 ## Ejecutando las consultas ⚙️
+<a id="queries"/>
 
 _Con las **Entidades** y **Controladores** definidos y asociados a las distintas rutas en el archivo **routes.yaml**
 ya se pueden consultar los datos desde nuestra aplicación Symfony_
@@ -219,9 +218,8 @@ ya se pueden consultar los datos desde nuestra aplicación Symfony_
 
 <br/>
 
-<a id="resources"/>
-
 ## Construido con 🛠️
+<a id="resources"/>
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
@@ -229,16 +227,14 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [Symfony](https://symfony.com/) - Framework PHP
 * [Doctrine](https://www.doctrine-project.org/) - ORM
 
-<a id="authors"/>
-
 ## Autores ✒️
+<a id="authors"/>
 
 * **Antonio Calabuig** - *Trabajo Inicial* - [buig](https://github.com/buig)
 * **Juan Carlos Aguirre** - *Documentación* - [jcarlosaguirre](https://github.com/jcarlosaguirre)
 
-<a id="license"/>
-
 ## Licencia 📄
+<a id="license"/>
 
 Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
