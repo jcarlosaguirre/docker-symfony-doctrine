@@ -150,7 +150,7 @@ _Este comando creará una entity por tabla existente en la base de datos. El sig
 a cada una el **namespace** ( App\Entity ), los **getters** y los **setters** (eliminando la barra que se 
 incluye junto al tipado cuando hace referencia a otros objetos)._
 <div style="display: flex; justify-content: center">
- <img style="border: 1px solid #888;" width="400" src="./readmeImages/entity_jugadores.png" alt="Alt text" title="Optional title">
+ <img src="./readmeImages/entity_jugadores.png" alt="Alt text" title="Optional title">
 </div>
 <br/>
 
@@ -158,7 +158,7 @@ _El siguiente paso es crear, en sus respectivas carpetas, las clases php que ser
 desde los cuales operaremos con la base de datos. Los controladores serán referenciados en las distintas rutas de nuestra api en el 
 archivo **routes.yaml**:_
 <div style="display: flex; justify-content: center">
-<img style="border: 1px solid #888; width: 100vw; max-width: 600px" src="./readmeImages/routes_file.png" alt="Alt text" title="Optional title">
+<img src="./readmeImages/routes_file.png" alt="Alt text" title="Optional title">
 </div>
 <br/>
 
@@ -169,31 +169,31 @@ ya se pueden consultar los datos desde nuestra aplicación Symfony_
 
 * [apinba.local:8082/equipos](apinba.local:8082/equipos)
 <div style="display: flex; justify-content: center">
- <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_a.png" alt="Alt text" title="Optional title">
+ <img width="400" src="./readmeImages/endpoint_a.png" alt="Alt text" title="Optional title">
 </div>
 <br/>
 
 * [apinba.local:8082/jugador/fisico/{nombre}](apinba.local:8082/jugador/fisico/{nombre})
 <div style="display: flex; justify-content: center">
- <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_g.png" alt="Alt text" title="Optional title">
+ <img width="400" src="./readmeImages/endpoint_g.png" alt="Alt text" title="Optional title">
 </div>
 <br/>
 
 * [apinba.local:8082/estadisticas/jugador/{nombre}](apinba.local:8082/estadisticas/jugador/{nombre})
 <div style="display: flex; justify-content: center">
- <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_h.png" alt="Alt text" title="Optional title">
+ <img width="400" src="./readmeImages/endpoint_h.png" alt="Alt text" title="Optional title">
 </div>
 <br/>
 
 * [apinba.local:8082/partidos/resultados/visitante/{nombre}](apinba.local:8082/partidos/resultados/visitante/{nombre})
 <div style="display: flex; justify-content: center">
- <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_k.png" alt="Alt text" title="Optional title">
+ <img width="400" src="./readmeImages/endpoint_k.png" alt="Alt text" title="Optional title">
 </div>
 <br/>
 
 * [apinba.local:8082/partidos/resultados/media/visitante/{nombre}](apinba.local:8082/partidos/resultados/media/visitante/{nombre})
 <div style="display: flex; justify-content: center">
- <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_m.png" alt="Alt text" title="Optional title">
+ <img style="margin: 0 auto" width="400" src="./readmeImages/endpoint_m.png" alt="Alt text" title="Optional title">
 </div>
 <br/>
 
