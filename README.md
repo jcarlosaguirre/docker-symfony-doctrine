@@ -1,11 +1,20 @@
-# Acceso a datos - Proyecto NBA
+# Proyecto Symfony NBA
 
-_Proyecto de desarrollo de una aplicación web con Symfony_
+### Descripción 🔎️
+___
 
-## Comenzando 🚀
+_Proyecto de práctiva para el desarrollo de una aplicación web con Symfony y Doctrine.  
+Crea un proyecto desde cero con una base de datos de prueba de la NBA, importando un 
+archivo sql a un servidor de base de datos y cargando la información a sus tablas con 
+scripts de python desde la consola._
 
-_Debemos crear una copia de la carpeta **sf-app-provisioning** de nuestro proyecto symfony anterior y 
-renombrarla a **apinba**. Podemos mover la carpeta a otro directorio para trabajar más cómodamente_
+### Pre-requisitos 📋
+___
+
+_- Disponer de un contenedor Docker con MySQL accesible o un servidor de base de datos._ <br/>
+
+_Crear una copia de la carpeta **sf-app-provisioning** de nuestro proyecto **Symfony** anterior y 
+renombrarla a **apinba**. Podemos mover la carpeta a otro directorio para trabajar más cómodamente._
 
 ```
 // Por consola
@@ -13,14 +22,9 @@ cp -R sf-app-provisioning apinba
 mv apinba ../apinba
 cd ../apinba
 ```
-
-_Podemos incluir un dominio personalizado en nuestro archivo **hosts** para acceder a la aplicación de **Symfony** 
-de manera más intuitiva._  
-![archivo hosts: 127.0.0.1 apinba.local](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+<br/>
 
 
-### Pre-requisitos 📋
-_- Disponer de un contenedor Docker con MySQL accesible._ <br/>
 _- Relizar las siguientes modificaciones en los archivos a continuación:_
 
 * _**.env.webapp**:_
@@ -29,66 +33,90 @@ APACHE_SERVER_NAME=apinba.local
 APACHE_SERVER_ALIAS=apinba.local
 APACHE_DOCUMENT_ROOT=/code/public
 ```
+<br/>
+
 
 * _**docker-compose.yml**:_
 ```
 container_name: apinba
 ```
+<br/>
 
 
-### Instalación 🔧
+_Podemos incluir un dominio personalizado en nuestro archivo **hosts** para acceder a la aplicación de **Symfony**
+de manera más intuitiva._
 
-_Una vez estos archivos han sido modificados, construimos el contenedor y 
+
+* _**etc/hosts (Linux)**_ o _**C:\Windows\System32\drivers\etc\hosts (Windows)**._
+```
+127.0.0.1	apinba.local
+```
+
+
+## Instalación 🚀
+___
+
+_Una vez realizados los pre-requisitos, construimos el contenedor y 
 accedemos a él para crear nuestro proyecto._
 
 ```
 docker-compose up --build
 docker exec -it apinba bash
 ```
+<br/>
 
-_A continuación creamos el proyecto symfony indicando la versión y evitando la
-inicialización del repositorio git._ 
+_A continuación creamos el proyecto Symfony indicando la versión y evitando la
+inicialización de un repositorio git._ 
 _Esto creará un nuevo directorio con el mismo nombre **apinba**. Movemos el contenido de este
- a nuestro directorio de trabajo_
+ a nuestro directorio de trabajo._
 
 ```
 symfony new apinba --version=4.4 --full --no-git
 mv apinba/* .
 mv apinba/.env .
 ```
+<br/>
 
 _Abrimos el navegador y accedemos a la url de nuestro proyecto. Si no es accesible debemos cambiar los 
-permisos del directorio **/var/log**_
+permisos del directorio **var/log** de nuestro proyecto._
 
 ```
-chmod 777 -R /var/log
+chmod 777 -R var/log
 ```
+<br/>
 
 
-### Conexión e importación de base de datos
 
-_Importar archivo **.sql**_
+### Conexión e importación de base de datos 🔗
+___
+
+_Al construir el contenedor de Docker se ha instalado el **cliente de mysql**, con el cual vamos a conectarnos a
+nuestro **contenedor** o **servidor de base** de datos para importar el archivo **.sql** (en caso de tener uno)_
 ```
-mysql -u root -pdbrootpass -h mysql-container < archivo.sql
+mysql -u root -pdbrootpass -h mysql-container < loadData/nba_2022-02-02.sql
 ```
+<br/>
 
 
-### Insertar datos en las tablas
+### Insertar datos en las tablas 💾
+___
 
-_Ejecutamos los **scripts** de python para insertar datos en el siguiente orden:_
+_Al igual que mysql-client, **python** viene instalado por defecto al levantar el contenedor. Ejecutamos los **scripts** de python para insertar datos en el siguiente orden:_
 ```
 python3 scripts/equipos.py  
 python3 scripts/jugadores.py  
 python3 scripts/partidos.py  
 python3 scripts/estadisticas.py
 ```
+<br/>
 
 
-### Doctrine. Entities y repositorios
+### Doctrine. Entities y repositorios 🗃️
+___
 
-_El siguiente comando permite incluir unas dependencias extra en el proyecto para 
-facilitar el uso de las bases de datos con doctrine.  
-Un ejemplo incluyendo GroupConcat y DateFormat:_ 
+_El siguiente comando permite incluir el bundle **beberlei**, que añade unas dependencias extra en el proyecto para 
+facilitar el uso de las bases de datos con doctrine.
+Un ejemplo incluyendo **GroupConcat** y **DateFormat**:_ 
 ```
 composer require beberlei/doctrineextensions  
 
@@ -98,6 +126,8 @@ dql:
         group_concat: DoctrineExtensions\Query\Mysql\GroupConcat
         date_format: DoctrineExtensions\Query\Mysql\DateFormat
 ```
+<br/>
+
 
 Añadimos las siguientes variables de entorno al archivo _**.env**:_
 ```
@@ -107,83 +137,82 @@ DB_USER=root
 DB_NAME=nba
 DB_DATABASE_URL="mysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:3306/${DB_NAME}?serverVersion=5.7"
 ```
+<br/>
 
-_Creamos las distintas entities desde la base de datos_
+
+_Creamos las distintas entities desde la base de datos:_
 ```
 php bin/console doctrine:mapping:convert annotation src/Entity/ --from-database
 ```
+<br/>
+
+
 _Este comando creará una entity por tabla existente en la base de datos. El siguiente paso es agregarle
 a cada una el **namespace** ( App\Entity ), los **getters** y los **setters** (eliminando la barra que se 
 incluye junto al tipado cuando hace referencia a otros objetos)._
+<div style="display: flex; justify-content: center">
+ <img style="border: 1px solid #888; width: 100vw; max-width: 600px" src="./readmeImages/entity_jugadores.png" alt="Alt text" title="Optional title">
+</div>
 
-_El siguiente paso es crear, en sus respectivas carpetas, los **repositorios** y **controladores** de cada entidad,
-desde los cuales operaremos con la base de datos._
+_El siguiente paso es crear, en sus respectivas carpetas, las clases php que servirán de **repositorios** y **controladores** de cada entidad,
+desde los cuales operaremos con la base de datos. Los controladores serán referenciados en las distintas rutas de nuestra api en el 
+archivo **routes.yaml**:_
+<div style="display: flex; justify-content: center">
+<img style="border: 1px solid #888; width: 100vw; max-width: 600px" src="./readmeImages/routes_file.png" alt="Alt text" title="Optional title">
+</div>
 
-## Ejecutando las pruebas ⚙️
+## Ejecutando las consultas ⚙️
+___
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+_Con las **Entidades** y **Controladores** definidos y asociados a las distintas rutas en el archivo **routes.yaml**
+ya se pueden consultar los datos desde nuestra aplicación Symfony_
 
-### Analice las pruebas end-to-end 🔩
+* <a href="apinba.local:8082/equipos">apinba.local:8082/equipos</a>
+<div style="display: flex; justify-content: center">
+ <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_a.png" alt="Alt text" title="Optional title">
+</div>
 
-_Explica que verifican estas pruebas y por qué_
+* <a href="apinba.local:8082/jugador/fisico/{nombre}">apinba.local:8082/jugador/fisico/{nombre}</a>
+<div style="display: flex; justify-content: center">
+ <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_g.png" alt="Alt text" title="Optional title">
+</div>
 
-```
-Da un ejemplo
-```
+* <a href="apinba.local:8082/estadisticas/jugador/{nombre}">apinba.local:8082/estadisticas/jugador/{nombre}</a>
+<div style="display: flex; justify-content: center">
+ <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_h.png" alt="Alt text" title="Optional title">
+</div>
 
-### Y las pruebas de estilo de codificación ⌨️
+* <a href="apinba.local:8082/partidos/resultados/visitante/{nombre}">apinba.local:8082/partidos/resultados/visitante/{nombre}</a>
+<div style="display: flex; justify-content: center">
+ <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_k.png" alt="Alt text" title="Optional title">
+</div>
 
-_Explica que verifican estas pruebas y por qué_
+* <a href="apinba.local:8082/partidos/resultados/media/visitante/{nombre}">apinba.local:8082/partidos/resultados/media/visitante/{nombre}</a>
+<div style="display: flex; justify-content: center">
+ <img style="border: 1px solid #888; width: 60vw; max-width: 400px" src="./readmeImages/endpoint_m.png" alt="Alt text" title="Optional title">
+</div>
 
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
+<br/>
 
 ## Construido con 🛠️
+___
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+* [Docker](https://docs.docker.com/) - Plataforma de desarrollo
+* [Symfony](https://symfony.com/) - Framework PHP
+* [Doctrine](https://www.doctrine-project.org/) - ORM
 
 ## Autores ✒️
+___
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+* **Antonio Calabuig** - *Trabajo Inicial* - [buig](https://github.com/buig)
+* **Juan Carlos Aguirre** - *Documentación* - [jcarlosaguirre](https://github.com/jcarlosaguirre)
 
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
 
 ## Licencia 📄
+___
 
 Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
-## Expresiones de Gratitud 🎁
 
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
-
----
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
