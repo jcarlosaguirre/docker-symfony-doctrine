@@ -8,7 +8,7 @@ archivo sql a un servidor de base de datos y cargando la información a sus tabl
 scripts de python desde la consola._
 <br/>
 
-### Table of Contents
+### Tabla de Contenidos
 * [Pre-requisitos](#requeriments)  
 * [Instalación](#install)  
 * [Ejecutando las consultas](#queries)  
