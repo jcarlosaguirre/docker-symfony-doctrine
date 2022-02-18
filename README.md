@@ -3,7 +3,7 @@
 ### Descripción 🔎️
 
 
-_Proyecto de práctiva para el desarrollo de una aplicación web con Symfony y Doctrine.  
+_Proyecto de práctiCa para el desarrollo de una aplicación web con Symfony y Doctrine.  
 Crea un proyecto desde cero con una base de datos de prueba de la NBA, importando un 
 archivo sql a un servidor de base de datos y cargando la información a sus tablas con 
 scripts de python desde la consola._
