@@ -1,5 +1,14 @@
 # Proyecto Symfony NBA
 
+### Table of Contents
+* [Descripción]()  
+* [Pre-requisitos](#requeriments)  
+* [Instalación](#install)  
+* [Ejecutando las consultas](#queries)  
+* [Construido con](#resources)  
+* [Autores](#authors)  
+* [Licencia](#license)
+
 ### Descripción 🔎️
 
 
@@ -7,6 +16,8 @@ _Proyecto de práctica para el desarrollo de una aplicación web con Symfony y D
 Crea un proyecto desde cero con una base de datos de prueba de la NBA, importando un 
 archivo sql a un servidor de base de datos y cargando la información a sus tablas con 
 scripts de python desde la consola._
+
+<a id="requeriments"/>
 
 ### Pre-requisitos 📋
 
@@ -55,6 +66,7 @@ de manera más intuitiva._
 127.0.0.1	apinba.local
 ```
 
+<a id="install"/>
 
 ## Instalación 🚀
 
@@ -168,6 +180,8 @@ archivo **routes.yaml**:_
 </p>
 <br/>
 
+<a id="queries"/>
+
 ## Ejecutando las consultas ⚙️
 
 _Con las **Entidades** y **Controladores** definidos y asociados a las distintas rutas en el archivo **routes.yaml**
@@ -205,6 +219,8 @@ ya se pueden consultar los datos desde nuestra aplicación Symfony_
 
 <br/>
 
+<a id="resources"/>
+
 ## Construido con 🛠️
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
@@ -213,11 +229,14 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [Symfony](https://symfony.com/) - Framework PHP
 * [Doctrine](https://www.doctrine-project.org/) - ORM
 
+<a id="authors"/>
+
 ## Autores ✒️
 
 * **Antonio Calabuig** - *Trabajo Inicial* - [buig](https://github.com/buig)
 * **Juan Carlos Aguirre** - *Documentación* - [jcarlosaguirre](https://github.com/jcarlosaguirre)
 
+<a id="license"/>
 
 ## Licencia 📄
 
