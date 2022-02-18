@@ -1,7 +1,7 @@
 # Proyecto Symfony NBA
 
 ### Descripción 🔎️
-___
+
 
 _Proyecto de práctiva para el desarrollo de una aplicación web con Symfony y Doctrine.  
 Crea un proyecto desde cero con una base de datos de prueba de la NBA, importando un 
@@ -9,7 +9,7 @@ archivo sql a un servidor de base de datos y cargando la información a sus tabl
 scripts de python desde la consola._
 
 ### Pre-requisitos 📋
-___
+
 
 _- Disponer de un contenedor Docker con MySQL accesible o un servidor de base de datos._ <br/>
 
@@ -87,7 +87,7 @@ chmod 777 -R var/log
 
 
 ### Conexión e importación de base de datos 🔗
-___
+
 
 _Al construir el contenedor de Docker se ha instalado el **cliente de mysql**, con el cual vamos a conectarnos a
 nuestro **contenedor** o **servidor de base** de datos para importar el archivo **.sql** (en caso de tener uno)_
@@ -98,7 +98,7 @@ mysql -u root -pdbrootpass -h mysql-container < loadData/nba_2022-02-02.sql
 
 
 ### Insertar datos en las tablas 💾
-___
+
 
 _Al igual que mysql-client, **python** viene instalado por defecto al levantar el contenedor. Ejecutamos los **scripts** de python para insertar datos en el siguiente orden:_
 ```
@@ -111,7 +111,7 @@ python3 scripts/estadisticas.py
 
 
 ### Doctrine. Entities y repositorios 🗃️
-___
+
 
 _El siguiente comando permite incluir el bundle **beberlei**, que añade unas dependencias extra en el proyecto para 
 facilitar el uso de las bases de datos con doctrine.
