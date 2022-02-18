@@ -1,22 +1,20 @@
 # Proyecto Symfony NBA
 
+## Descripción 🔎️
+
+_Proyecto de práctica para el desarrollo de una aplicación web con Symfony y Doctrine.  
+Crea un proyecto desde cero con una base de datos de prueba de la NBA, importando un
+archivo sql a un servidor de base de datos y cargando la información a sus tablas con
+scripts de python desde la consola._
+<br/>
+
 ### Table of Contents
-* [Descripción]()  
 * [Pre-requisitos](#requeriments)  
 * [Instalación](#install)  
 * [Ejecutando las consultas](#queries)  
 * [Construido con](#resources)  
 * [Autores](#authors)  
 * [Licencia](#license)
-
-## Descripción 🔎️
-
-_Proyecto de práctica para el desarrollo de una aplicación web con Symfony y Doctrine.  
-Crea un proyecto desde cero con una base de datos de prueba de la NBA, importando un 
-archivo sql a un servidor de base de datos y cargando la información a sus tablas con 
-scripts de python desde la consola._
-
-<br/>
 
 ## Pre-requisitos 📋
 <a id="requeriments"/>
