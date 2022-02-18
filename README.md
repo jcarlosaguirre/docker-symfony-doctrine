@@ -65,6 +65,7 @@ de manera más intuitiva._
 ```
 127.0.0.1	apinba.local
 ```
+<br/>
 
 
 ## Instalación 🚀
@@ -179,6 +180,7 @@ archivo **routes.yaml**:_
 <kbd> <img src="./readmeImages/routes_file.png" alt="Alt text" title="Optional title"> </kbd>
 </p>
 <br/>
+<br/>
 
 ## Ejecutando las consultas ⚙️
 <a id="queries"/>
@@ -217,6 +219,7 @@ ya se pueden consultar los datos desde nuestra aplicación Symfony_
 <br/>
 
 <br/>
+<br/>
 
 ## Construido con 🛠️
 <a id="resources"/>
@@ -226,12 +229,14 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [Docker](https://docs.docker.com/) - Plataforma de desarrollo
 * [Symfony](https://symfony.com/) - Framework PHP
 * [Doctrine](https://www.doctrine-project.org/) - ORM
+  <br/>
 
 ## Autores ✒️
 <a id="authors"/>
 
 * **Antonio Calabuig** - *Trabajo Inicial* - [buig](https://github.com/buig)
 * **Juan Carlos Aguirre** - *Documentación* - [jcarlosaguirre](https://github.com/jcarlosaguirre)
+  <br/>
 
 ## Licencia 📄
 <a id="license"/>
